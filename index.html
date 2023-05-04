@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+</head>
+<body>
+
+    <label for="weight">What is your Weight</label>
+    <input type="text" id="weight" value="0">
+
+    <label for="height">What is your Height</label>
+    <input type="text" id="height" value="0">
+
+    <button onclick="BmiCalculator(document.getElementById('weight').value,document.getElementById('height').value)">Calculate your BMI</button> <!--Value aqui para nao havir complicações em relação há divisão e para definir sempre valor numerico -->
+
+    <script>
+        function BmiCalculator (weight , height) {
+            var bmi = weight / (height * height)
+            var MaxNumber = Math.floor(Math.random() * 34 ) + 1
+            if (bmi <= 18.4 ) {
+                alert('UnderWeight')
+            } 
+            else if (bmi >= 18.5 && bmi <= 24.9){
+                alert ('Normal')
+            } 
+            else if (bmi >= 25 && bmi <= 29.9){
+                alert ('OverWeight')
+            } 
+            else if (bmi >= 30 && bmi <= 34.9){
+                alert ('Obese')
+            } 
+            else if (bmi >= 35) {
+                alert('Extremly Obese')
+            }
+            alert(bmi)
+        }
+    </script>
+</body>
+</html>
